@@ -1,0 +1,858 @@
+[
+  {
+    "id": 490,
+    "name": "Puerto Rico"
+  },
+  {
+    "id": 491,
+    "name": "Virgin Islands"
+  },
+  {
+    "id": 493,
+    "name": "American Samoa"
+  },
+  {
+    "id": 494,
+    "name": "Federated States of Micronesia"
+  },
+  {
+    "id": 495,
+    "name": "Guam"
+  },
+  {
+    "id": 496,
+    "name": "Marshall Islands"
+  },
+  {
+    "id": 498,
+    "name": "Northern Mariana Islands"
+  },
+  {
+    "id": 499,
+    "name": "Palau"
+  },
+  {
+    "id": 500,
+    "name": "Portland - Auburn"
+  },
+  {
+    "id": 501,
+    "name": "New York"
+  },
+  {
+    "id": 502,
+    "name": "Binghamton"
+  },
+  {
+    "id": 503,
+    "name": "Macon"
+  },
+  {
+    "id": 504,
+    "name": "Philadelphia"
+  },
+  {
+    "id": 505,
+    "name": "Detroit"
+  },
+  {
+    "id": 506,
+    "name": "Boston (Manchester)"
+  },
+  {
+    "id": 507,
+    "name": "Savannah"
+  },
+  {
+    "id": 508,
+    "name": "Pittsburgh"
+  },
+  {
+    "id": 509,
+    "name": "Fort Wayne"
+  },
+  {
+    "id": 510,
+    "name": "Cleveland"
+  },
+  {
+    "id": 511,
+    "name": "Washington DC (Hagerstown)"
+  },
+  {
+    "id": 512,
+    "name": "Baltimore"
+  },
+  {
+    "id": 513,
+    "name": "Flint - Saginaw - Bay City"
+  },
+  {
+    "id": 514,
+    "name": "Buffalo"
+  },
+  {
+    "id": 515,
+    "name": "Cincinnati"
+  },
+  {
+    "id": 516,
+    "name": "Erie"
+  },
+  {
+    "id": 517,
+    "name": "Charlotte"
+  },
+  {
+    "id": 518,
+    "name": "Greensboro - High Point - Winston-Salem"
+  },
+  {
+    "id": 519,
+    "name": "Charleston"
+  },
+  {
+    "id": 520,
+    "name": "Augusta"
+  },
+  {
+    "id": 521,
+    "name": "Providence - New Bedford"
+  },
+  {
+    "id": 522,
+    "name": "Columbus"
+  },
+  {
+    "id": 523,
+    "name": "Burlington - Plattsburgh"
+  },
+  {
+    "id": 524,
+    "name": "Atlanta"
+  },
+  {
+    "id": 525,
+    "name": "Albany"
+  },
+  {
+    "id": 526,
+    "name": "Utica"
+  },
+  {
+    "id": 527,
+    "name": "Indianapolis"
+  },
+  {
+    "id": 528,
+    "name": "Miami - Fort Lauderdale"
+  },
+  {
+    "id": 529,
+    "name": "Louisville"
+  },
+  {
+    "id": 530,
+    "name": "Tallahassee - Thomasville"
+  },
+  {
+    "id": 531,
+    "name": "Tri-Cities"
+  },
+  {
+    "id": 532,
+    "name": "Albany - Schenectady - Troy"
+  },
+  {
+    "id": 533,
+    "name": "Hartford & New Haven"
+  },
+  {
+    "id": 534,
+    "name": "Orlando - Daytona Beach - Melbourne"
+  },
+  {
+    "id": 535,
+    "name": "Columbus"
+  },
+  {
+    "id": 536,
+    "name": "Youngstown"
+  },
+  {
+    "id": 537,
+    "name": "Bangor"
+  },
+  {
+    "id": 538,
+    "name": "Rochester"
+  },
+  {
+    "id": 539,
+    "name": "Tampa - Saint Petersburg (Sarasota)"
+  },
+  {
+    "id": 540,
+    "name": "Traverse City - Cadillac"
+  },
+  {
+    "id": 541,
+    "name": "Lexington"
+  },
+  {
+    "id": 542,
+    "name": "Dayton"
+  },
+  {
+    "id": 543,
+    "name": "Springfield - Holyoke"
+  },
+  {
+    "id": 544,
+    "name": "Norfolk - Portsmouth - Newport News545"
+  },
+  {
+    "id": 546,
+    "name": "Columbia"
+  },
+  {
+    "id": 547,
+    "name": "Toledo"
+  },
+  {
+    "id": 548,
+    "name": "West Palm Beach - Fort Pierce"
+  },
+  {
+    "id": 549,
+    "name": "Watertown"
+  },
+  {
+    "id": 550,
+    "name": "Wilmington"
+  },
+  {
+    "id": 551,
+    "name": "Lansing"
+  },
+  {
+    "id": 552,
+    "name": "Presque Isle"
+  },
+  {
+    "id": 553,
+    "name": "Marquette"
+  },
+  {
+    "id": 554,
+    "name": "Wheeling - Steubenville"
+  },
+  {
+    "id": 555,
+    "name": "Syracuse"
+  },
+  {
+    "id": 556,
+    "name": "Richmond - Petersburg"
+  },
+  {
+    "id": 557,
+    "name": "Knoxville"
+  },
+  {
+    "id": 558,
+    "name": "Lima"
+  },
+  {
+    "id": 559,
+    "name": "Bluefield - Beckley - Oak Hill"
+  },
+  {
+    "id": 560,
+    "name": "Raleigh - Durham (Fayetteville)"
+  },
+  {
+    "id": 561,
+    "name": "Jacksonville"
+  },
+  {
+    "id": 563,
+    "name": "Grand Rapids - Kalamazoo - Battle Creek"
+  },
+  {
+    "id": 564,
+    "name": "Charleston-Huntington"
+  },
+  {
+    "id": 565,
+    "name": "Elmira"
+  },
+  {
+    "id": 566,
+    "name": "Harrisburg - Lancaster - Lebanon - York"
+  },
+  {
+    "id": 567,
+    "name": "Greenville - Spartansburg - Asheville - Anderson"
+  },
+  {
+    "id": 569,
+    "name": "Harrisonburg"
+  },
+  {
+    "id": 570,
+    "name": "Florence - Myrtle Beach"
+  },
+  {
+    "id": 571,
+    "name": "Fort Myers - Naples"
+  },
+  {
+    "id": 573,
+    "name": "Roanoke - Lynchburg"
+  },
+  {
+    "id": 574,
+    "name": "Johnstown - Altoona"
+  },
+  {
+    "id": 575,
+    "name": "Chattanooga"
+  },
+  {
+    "id": 576,
+    "name": "Salisbury"
+  },
+  {
+    "id": 577,
+    "name": "Wilkes Barre - Scranton"
+  },
+  {
+    "id": 581,
+    "name": "Terre Haute"
+  },
+  {
+    "id": 582,
+    "name": "Lafayette"
+  },
+  {
+    "id": 583,
+    "name": "Alpena"
+  },
+  {
+    "id": 584,
+    "name": "Charlottesville"
+  },
+  {
+    "id": 588,
+    "name": "South Bend - Elkhart"
+  },
+  {
+    "id": 592,
+    "name": "Gainesville"
+  },
+  {
+    "id": 596,
+    "name": "Zanesville"
+  },
+  {
+    "id": 597,
+    "name": "Parkersburg"
+  },
+  {
+    "id": 598,
+    "name": "Clarksburg - Weston"
+  },
+  {
+    "id": 600,
+    "name": "Corpus Christi"
+  },
+  {
+    "id": 602,
+    "name": "Chicago"
+  },
+  {
+    "id": 603,
+    "name": "Joplin - Pittsburg"
+  },
+  {
+    "id": 604,
+    "name": "Columbia - Jefferson City"
+  },
+  {
+    "id": 605,
+    "name": "Topeka"
+  },
+  {
+    "id": 606,
+    "name": "Dothan"
+  },
+  {
+    "id": 609,
+    "name": "Saint Louis"
+  },
+  {
+    "id": 610,
+    "name": "Rockford"
+  },
+  {
+    "id": 611,
+    "name": "Rochester - Mason City - Austin"
+  },
+  {
+    "id": 612,
+    "name": "Shreveport"
+  },
+  {
+    "id": 613,
+    "name": "Minneapolis - Saint Paul"
+  },
+  {
+    "id": 616,
+    "name": "Kansas City"
+  },
+  {
+    "id": 617,
+    "name": "Milwaukee"
+  },
+  {
+    "id": 618,
+    "name": "Houston"
+  },
+  {
+    "id": 619,
+    "name": "Springfield"
+  },
+  {
+    "id": 623,
+    "name": "Dallas - Fort Worth"
+  },
+  {
+    "id": 624,
+    "name": "Sioux City"
+  },
+  {
+    "id": 625,
+    "name": "Waco - Temple - Bryan"
+  },
+  {
+    "id": 626,
+    "name": "Victoria"
+  },
+  {
+    "id": 627,
+    "name": "Wichita Falls & Lawton"
+  },
+  {
+    "id": 628,
+    "name": "Monroe - El Dorado"
+  },
+  {
+    "id": 630,
+    "name": "Birmingham (Anniston and Tuscaloosa)"
+  },
+  {
+    "id": 631,
+    "name": "Ottumwa - Kirksville"
+  },
+  {
+    "id": 632,
+    "name": "Paducah - Cape Girardeau - Harrisburg - Mt Vernon"
+  },
+  {
+    "id": 633,
+    "name": "Odessa - Midland"
+  },
+  {
+    "id": 634,
+    "name": "Amarillo"
+  },
+  {
+    "id": 635,
+    "name": "Austin"
+  },
+  {
+    "id": 636,
+    "name": "Harlingen - Weslaco - Brownsville - McAllen"
+  },
+  {
+    "id": 637,
+    "name": "Cedar Rapids - Waterloo & Dubuque"
+  },
+  {
+    "id": 638,
+    "name": "Saint Joseph"
+  },
+  {
+    "id": 639,
+    "name": "Jackson"
+  },
+  {
+    "id": 640,
+    "name": "Memphis"
+  },
+  {
+    "id": 641,
+    "name": "San Antonio"
+  },
+  {
+    "id": 642,
+    "name": "Lafayette"
+  },
+  {
+    "id": 643,
+    "name": "Lake Charles"
+  },
+  {
+    "id": 644,
+    "name": "Alexandria"
+  },
+  {
+    "id": 647,
+    "name": "Greenwood - Greenville"
+  },
+  {
+    "id": 648,
+    "name": "Champaign & Springfield - Decatur"
+  },
+  {
+    "id": 649,
+    "name": "Evansville"
+  },
+  {
+    "id": 650,
+    "name": "Oklahoma City"
+  },
+  {
+    "id": 651,
+    "name": "Lubbock"
+  },
+  {
+    "id": 652,
+    "name": "Omaha"
+  },
+  {
+    "id": 656,
+    "name": "Panama City"
+  },
+  {
+    "id": 657,
+    "name": "Sherman - Ada"
+  },
+  {
+    "id": 658,
+    "name": "Green Bay - Appleton"
+  },
+  {
+    "id": 659,
+    "name": "Nashville"
+  },
+  {
+    "id": 661,
+    "name": "San Angelo"
+  },
+  {
+    "id": 662,
+    "name": "Abilene - Sweetwater"
+  },
+  {
+    "id": 669,
+    "name": "Madison"
+  },
+  {
+    "id": 670,
+    "name": "Fort Smith - Fayetteville - Springdale - Rogers"
+  },
+  {
+    "id": 671,
+    "name": "Tulsa"
+  },
+  {
+    "id": 673,
+    "name": "Columbus - Tupelo - West Point"
+  },
+  {
+    "id": 675,
+    "name": "Peoria - Bloomington"
+  },
+  {
+    "id": 676,
+    "name": "Duluth - Superior"
+  },
+  {
+    "id": 678,
+    "name": "Wichita - Hutchinson"
+  },
+  {
+    "id": 679,
+    "name": "Des Moines - Ames"
+  },
+  {
+    "id": 682,
+    "name": "Davenport - Rock Island - Moline"
+  },
+  {
+    "id": 686,
+    "name": "Mobile  - Pensacola (Fort Walton Beach)"
+  },
+  {
+    "id": 687,
+    "name": "Minot - Bismarck - Dickinson"
+  },
+  {
+    "id": 691,
+    "name": "Huntsville - Decatur (Florence)"
+  },
+  {
+    "id": 692,
+    "name": "Beaumont - Port Arthur"
+  },
+  {
+    "id": 693,
+    "name": "Little Rock - Pine Bluff"
+  },
+  {
+    "id": 698,
+    "name": "Montgomery (Selma)"
+  },
+  {
+    "id": 702,
+    "name": "La Crosse - Eau Claire"
+  },
+  {
+    "id": 705,
+    "name": "Wausau - Rhinelander"
+  },
+  {
+    "id": 709,
+    "name": "Tyler - Longview (Lufkin & Nacogdoches)"
+  },
+  {
+    "id": 710,
+    "name": "Hattiesburg - Laurel"
+  },
+  {
+    "id": 711,
+    "name": "Meridian716"
+  },
+  {
+    "id": 717,
+    "name": "Quincy - Hannibal - Keokuk"
+  },
+  {
+    "id": 718,
+    "name": "Jackson"
+  },
+  {
+    "id": 722,
+    "name": "Lincoln & Hastings - Kearney"
+  },
+  {
+    "id": 724,
+    "name": "Fargo - Valley City"
+  },
+  {
+    "id": 725,
+    "name": "Sioux Falls (Mitchell)"
+  },
+  {
+    "id": 734,
+    "name": "Jonesboro"
+  },
+  {
+    "id": 736,
+    "name": "Bowling Green"
+  },
+  {
+    "id": 737,
+    "name": "Mankato"
+  },
+  {
+    "id": 740,
+    "name": "North Platte"
+  },
+  {
+    "id": 743,
+    "name": "Anchorage"
+  },
+  {
+    "id": 744,
+    "name": "Honolulu"
+  },
+  {
+    "id": 745,
+    "name": "Fairbanks"
+  },
+  {
+    "id": 746,
+    "name": "Biloxi - Gulfport"
+  },
+  {
+    "id": 747,
+    "name": "Juneau"
+  },
+  {
+    "id": 749,
+    "name": "Laredo"
+  },
+  {
+    "id": 751,
+    "name": "Denver"
+  },
+  {
+    "id": 752,
+    "name": "Colorado Springs - Pueblo"
+  },
+  {
+    "id": 753,
+    "name": "Phoenix"
+  },
+  {
+    "id": 754,
+    "name": "Butte - Bozeman"
+  },
+  {
+    "id": 755,
+    "name": "Great Falls"
+  },
+  {
+    "id": 756,
+    "name": "Billings"
+  },
+  {
+    "id": 757,
+    "name": "Boise"
+  },
+  {
+    "id": 758,
+    "name": "Idaho Falls - Pocatello"
+  },
+  {
+    "id": 759,
+    "name": "Cheyenne - Scottsbluff"
+  },
+  {
+    "id": 760,
+    "name": "Twin Falls"
+  },
+  {
+    "id": 762,
+    "name": "Missoula"
+  },
+  {
+    "id": 764,
+    "name": "Rapid City"
+  },
+  {
+    "id": 765,
+    "name": "El Paso"
+  },
+  {
+    "id": 766,
+    "name": "Helena"
+  },
+  {
+    "id": 767,
+    "name": "Casper - Riverton"
+  },
+  {
+    "id": 770,
+    "name": "Salt Lake City"
+  },
+  {
+    "id": 771,
+    "name": "Yuma - El Centro"
+  },
+  {
+    "id": 773,
+    "name": "Grand Junction - Montrose"
+  },
+  {
+    "id": 789,
+    "name": "Tucson (Sierra Vista)"
+  },
+  {
+    "id": 790,
+    "name": "Albuquerque - Santa Fe"
+  },
+  {
+    "id": 798,
+    "name": "Glendive"
+  },
+  {
+    "id": 800,
+    "name": "Bakersfield"
+  },
+  {
+    "id": 801,
+    "name": "Eugene"
+  },
+  {
+    "id": 802,
+    "name": "Eureka"
+  },
+  {
+    "id": 803,
+    "name": "Los Angeles"
+  },
+  {
+    "id": 804,
+    "name": "Palm Springs"
+  },
+  {
+    "id": 807,
+    "name": "San Francisco - Oakland - San Jose"
+  },
+  {
+    "id": 810,
+    "name": "Yakima - Pasco - Richland - Kennewick"
+  },
+  {
+    "id": 811,
+    "name": "Reno"
+  },
+  {
+    "id": 813,
+    "name": "Medford - Klamath Falls"
+  },
+  {
+    "id": 819,
+    "name": "Seattle - Tacoma"
+  },
+  {
+    "id": 820,
+    "name": "Portland"
+  },
+  {
+    "id": 821,
+    "name": "Bend"
+  },
+  {
+    "id": 825,
+    "name": "San Diego"
+  },
+  {
+    "id": 828,
+    "name": "Monterey - Salinas"
+  },
+  {
+    "id": 839,
+    "name": "Las Vegas"
+  },
+  {
+    "id": 855,
+    "name": "Santa Barbara - Santa Maria - San Luis Obispo"
+  },
+  {
+    "id": 862,
+    "name": "Sacramento - Stockton - Modesto866"
+  },
+  {
+    "id": 868,
+    "name": "Chico - Redding"
+  },
+  {
+    "id": 881,
+    "name": "Spokane"
+  }
+]

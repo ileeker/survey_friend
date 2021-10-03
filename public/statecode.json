@@ -1,0 +1,297 @@
+[
+  {
+    "id": 2,
+    "name_o": "Alabama",
+    "name": "Alabama(AL)"
+  },
+  {
+    "id": 1,
+    "name_o": "Alaska",
+    "name": "Alaska(AK)"
+  },
+  {
+    "id": 4,
+    "name_o": "American Samoa",
+    "name": "American Samoa(AS)"
+  },
+  {
+    "id": 5,
+    "name_o": "Arizona",
+    "name": "Arizona(AZ)"
+  },
+  {
+    "id": 3,
+    "name_o": "Arkansas",
+    "name": "Arkansas(AR)"
+  },
+  {
+    "id": 6,
+    "name_o": "California",
+    "name": "California(CA)"
+  },
+  {
+    "id": 7,
+    "name_o": "Colorado",
+    "name": "Colorado(CO)"
+  },
+  {
+    "id": 8,
+    "name_o": "Connecticut",
+    "name": "Connecticut(CT)"
+  },
+  {
+    "id": 10,
+    "name_o": "Delaware",
+    "name": "Delaware(DE)"
+  },
+  {
+    "id": 9,
+    "name_o": "District Of Columbia",
+    "name": "District Of Columbia"
+  },
+  {
+    "id": 12,
+    "name_o": "Federated States Of Micronesi",
+    "name": "Federated States Of Micronesi"
+  },
+  {
+    "id": 11,
+    "name_o": "Florida",
+    "name": "Florida(FL)"
+  },
+  {
+    "id": 13,
+    "name_o": "Georgia",
+    "name": "Georgia(GA)"
+  },
+  {
+    "id": 14,
+    "name_o": "Guam",
+    "name": "Guam(GU)"
+  },
+  {
+    "id": 15,
+    "name_o": "Hawaii",
+    "name": "Hawaii(HI)"
+  },
+  {
+    "id": 17,
+    "name_o": "Idaho",
+    "name": "Idaho(ID)"
+  },
+  {
+    "id": 18,
+    "name_o": "Illinois",
+    "name": "Illinois(IL)"
+  },
+  {
+    "id": 19,
+    "name_o": "Indiana",
+    "name": "Indiana(IN)"
+  },
+  {
+    "id": 16,
+    "name_o": "Iowa",
+    "name": "Iowa(IA)"
+  },
+  {
+    "id": 20,
+    "name_o": "Kansas",
+    "name": "Kansas(KS)"
+  },
+  {
+    "id": 21,
+    "name_o": "Kentucky",
+    "name": "Kentucky(KY)"
+  },
+  {
+    "id": 22,
+    "name_o": "Louisiana",
+    "name": "Louisiana(LA)"
+  },
+  {
+    "id": 25,
+    "name_o": "Maine",
+    "name": "Maine(ME)"
+  },
+  {
+    "id": 26,
+    "name_o": "Marshall Islands",
+    "name": "Marshall Islands"
+  },
+  {
+    "id": 24,
+    "name_o": "Maryland",
+    "name": "Maryland(MD)"
+  },
+  {
+    "id": 23,
+    "name_o": "Massachusetts",
+    "name": "Massachusetts(MA)"
+  },
+  {
+    "id": 27,
+    "name_o": "Michigan",
+    "name": "Michigan(MI)"
+  },
+  {
+    "id": 28,
+    "name_o": "Minnesota",
+    "name": "Minnesota(MN)"
+  },
+  {
+    "id": 31,
+    "name_o": "Mississippi",
+    "name": "Mississippi(MS)"
+  },
+  {
+    "id": 29,
+    "name_o": "Missouri",
+    "name": "Missouri(MO)"
+  },
+  {
+    "id": 32,
+    "name_o": "Montana",
+    "name": "Montana(MT)"
+  },
+  {
+    "id": 35,
+    "name_o": "Nebraska",
+    "name": "Nebraska(NE)"
+  },
+  {
+    "id": 39,
+    "name_o": "Nevada",
+    "name": "Nevada(NV)"
+  },
+  {
+    "id": 36,
+    "name_o": "New Hampshire",
+    "name": "New Hampshire(NH)"
+  },
+  {
+    "id": 37,
+    "name_o": "New Jersey",
+    "name": "New Jersey(NJ)"
+  },
+  {
+    "id": 38,
+    "name_o": "New Mexico",
+    "name": "New Mexico(NM)"
+  },
+  {
+    "id": 40,
+    "name_o": "New York",
+    "name": "New York(NY)"
+  },
+  {
+    "id": 33,
+    "name_o": "North Carolina",
+    "name": "North Carolina(NC)"
+  },
+  {
+    "id": 34,
+    "name_o": "North Dakota",
+    "name": "North Dakota(ND)"
+  },
+  {
+    "id": 30,
+    "name_o": "Northern Mariana Islands",
+    "name": "Northern Marianas(MP)"
+  },
+  {
+    "id": 41,
+    "name_o": "Ohio",
+    "name": "Ohio(OH)"
+  },
+  {
+    "id": 42,
+    "name_o": "Oklahoma",
+    "name": "Oklahoma(OK)"
+  },
+  {
+    "id": 43,
+    "name_o": "Oregon",
+    "name": "Oregon(OR)"
+  },
+  {
+    "id": 46,
+    "name_o": "Palau",
+    "name": "Palau"
+  },
+  {
+    "id": 44,
+    "name_o": "Pennsylvania",
+    "name": "Pennsylvania(PA)"
+  },
+  {
+    "id": 45,
+    "name_o": "Puerto Rico",
+    "name": "Puerto Rico(PR)"
+  },
+  {
+    "id": 47,
+    "name_o": "Rhode Island",
+    "name": "Rhode Island(RI)"
+  },
+  {
+    "id": 48,
+    "name_o": "South Carolina",
+    "name": "South Carolina(SC)"
+  },
+  {
+    "id": 49,
+    "name_o": "South Dakota",
+    "name": "South Dakota(SD)"
+  },
+  {
+    "id": 50,
+    "name_o": "Tennessee",
+    "name": "Tennessee(TN)"
+  },
+  {
+    "id": 51,
+    "name_o": "Texas",
+    "name": "Texas(TX)"
+  },
+  {
+    "id": 52,
+    "name_o": "Utah",
+    "name": "Utah(UT)"
+  },
+  {
+    "id": 55,
+    "name_o": "Vermont",
+    "name": "Vermont(VT)"
+  },
+  {
+    "id": 54,
+    "name_o": "Virgin Islands",
+    "name": "Virgin Islands(VI)"
+  },
+  {
+    "id": 53,
+    "name_o": "Virginia",
+    "name": "Virginia(VA)"
+  },
+  {
+    "id": 56,
+    "name_o": "Washington",
+    "name": "Washington(WA)"
+  },
+  {
+    "id": 58,
+    "name_o": "West Virginia",
+    "name": "West Virginia(WV)"
+  },
+  {
+    "id": 57,
+    "name_o": "Wisconsin",
+    "name": "Wisconsin(WI)"
+  },
+  {
+    "id": 59,
+    "name_o": "Wyoming",
+    "name": "Wyoming(WY)"
+  }
+]
