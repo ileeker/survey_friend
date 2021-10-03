@@ -16,7 +16,7 @@ class CreateSamplecubesTable extends Migration
         Schema::create('samplecubes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('surveyid')->nullable();
-            $table->integer('groupid')->nullable();
+            $table->string('groupid')->nullable();
             $table->string('surveyname')->nullable();
             $table->integer('totalquota')->nullable();
             $table->integer('remainquota')->nullable();
