@@ -16,7 +16,7 @@ class SampleCubeController extends Controller
         $response = file_get_contents($URL, false, $context);
         $array = json_decode($response, true);
 
-        return $array;
+        // return $array;
 
         Sample_cube::truncate();
 
