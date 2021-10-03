@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SampleCubeController;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -63,6 +64,7 @@ Route::middleware('auth')->group(function () {
 
     // Sample-Cube开始
     Route::get('/sample-cube', function(){return '<h1>Not suitable for making money.</h1>';})->name('samplecube');
+    Route::get('/sample-cube/store', 'SampleCubeController@sample_cube_store')->name('samplecube_store');
 
     // History
     Route::get('/history', 'SettingController@history')->name('history');
