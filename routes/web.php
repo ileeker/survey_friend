@@ -63,9 +63,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/dynata/attribute/{country}/{language}/{id}', 'DynataController@attribute')->where(['id' => '[0-9]+', 'country' => '[A-Za-z]+', 'language' => '[A-Za-z]+']);
 
     // Sample-Cube开始
-    Route::get('/sample-cube', function(){return '<h1>Not suitable for making money.</h1>';})->name('samplecube');
+    // Route::get('/sample-cube', function(){return '<h1>Not suitable for making money.</h1>';})->name('samplecube');
     Route::get('/sample-cube/store', 'SampleCubeController@sample_cube_store')->name('samplecube_store');
-
+    Route::get('/sample-cube','SampleCubeController@samplecube')->name('samplecube');
+    Route::get('/sample-cube/{id}','SampleCubeController@sample_cube_id')->where('id', '[0-9]+');
+    Route::get('/sample-cube/quota/{id}/{country}','SampleCubeController@sample_cube_quota')->where('id', '[0-9]+')->name('samplecube_quota');
+    Route::get('/sample-cube/{country}','SampleCubeController@sample_cube_country')->where('country', '[[a-zA-Z]+');
+    Route::get('/sample-cube/group/{id}','SampleCubeController@sample_cube_group');
+    
     // History
     Route::get('/history', 'SettingController@history')->name('history');
     Route::get('/individual/{startDate}/{endDate}', 'SettingController@individual')->name('individual');

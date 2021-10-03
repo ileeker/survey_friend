@@ -62,4 +62,107 @@ class SampleCubeController extends Controller
 
         return $array['Surveys'];
     }
+
+    // Sample-Cube读取
+    public function samplecube(){
+
+        // 判断Cookie是否存在
+        if (request()->cookie('profile_json') == NULL) {
+            return '<h1 style="color:red">No Cookie!</h1>';
+        }
+
+        $list = Sample_cube::all();
+
+        $group_all = Scgroup::all();
+
+        $group_id_array = array();
+        $group_id_only = array();
+
+        // GroupID集合
+        $group_id = array();
+
+        foreach ($group_all as $value) {
+            $group_id_array[$value['SurveyId']] = $value['SurveyGroupId'];
+            $group_id_only[] = $value['SurveyGroupId'];
+        }
+
+        // 过滤group_id_only
+        $group_id_only = array_values(array_unique($group_id_only));
+
+        $user = auth()->user();
+
+        $whitelist = $user->whitelists->where('status','whitelist')->all();
+        $blacklist = $user->whitelists->where('status','blacklist')->all();
+
+        foreach ($list as $key => $value1) {
+
+            if (array_key_exists($value1['surveyid'],$group_id_array)) {
+                $value1['groupID'] = $group_id_array[$value1['surveyid']];
+
+                if ($value1['groupID'] != '') {
+                    $group_id[] = $value1['groupID'];
+                }
+
+            }else {
+                $value1['groupID'] = '';
+            }
+
+            foreach ($whitelist as $value2) {
+                if ($value1['surveyid'] == $value2['surveyid']) {
+                    $value1['whitelist'] = "w";
+                }
+            }
+        }
+
+        // 转换Group的数组
+        $counts = array_count_values($group_id);
+
+        foreach ($list as $key => $value1) {
+
+            if ($value1['groupID'] != '') {
+                $value1['count'] = ''.$counts[$value1['groupID']];
+            }
+
+            foreach ($blacklist as $value2) {
+                if ($value1['surveyid'] == $value2['surveyid']) {
+                    $value1['blacklist'] = "b";
+                }
+            }
+        }
+
+        // 被选中的survey id
+        $select_array = array();
+
+        foreach ($group_id_only as $id) {
+            $cpi = 0;
+            $select_id = '';
+            foreach ($list as $value) {
+                if ($value['groupID'] == $id) {
+                    if ($value['cpi'] > $cpi) {
+                        $cpi = $value['cpi'];
+                        $select_id = $value['surveyid'];
+                    }
+                }
+            }
+            $select_array[] = $select_id;
+        }
+
+        $new_list = array();
+        
+        foreach ($list as $key => $value) {
+            if ($value['groupID'] == '') {
+                $new_list[] = $value;
+            }else {
+                if (in_array($value['surveyid'],$select_array)) {
+                    $new_list[] = $value;
+                }
+            }
+        }
+        
+        $list = $new_list;
+
+        $count = count($list);
+
+        return view('survey.samplecube',compact('list','count'));
+    }
 }
