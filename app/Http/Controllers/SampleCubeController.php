@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Samplecube;
+
 
 class SampleCubeController extends Controller
 {
@@ -18,13 +20,13 @@ class SampleCubeController extends Controller
 
         // return $array;
 
-        Sample_cube::truncate();
+        Samplecube::truncate();
 
         // // 插入所有调查链接到数据库
         foreach ($array['Surveys'] as $value) 
         {
             if ($value['CPI'] > 1.5) {
-                $task = new Sample_cube();
+                $task = new Samplecube();
                 $task->surveyID = $value['SurveyId'];
                 $task->surveyName = $value['ProjectId'];
                 $task->totalQuota = $value['LanguageId'];
