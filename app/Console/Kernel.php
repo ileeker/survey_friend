@@ -26,8 +26,6 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->call('App\Http\Controllers\InnovateController@store')->hourly();
-        $schedule->call('App\Http\Controllers\OpinionetworkController@store')->hourly();
         // $schedule->call('App\Http\Controllers\DynataController@store')->hourly();
         // $schedule->call('App\Http\Controllers\DynataController@remain_store')->hourly();
         $schedule->command('update:dynata')->hourly();
