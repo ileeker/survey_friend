@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Samplecube;
 use App\Scgroup;
-
+use App\History;
 
 class SampleCubeController extends Controller
 {
@@ -143,5 +143,65 @@ class SampleCubeController extends Controller
 
         // return $remark;
         return view('samplecube',compact('total','remark','new_all', 'last_time'));
+    }
+
+    // Sample-Cube的id读取
+    public function sample_cube_id($id){
+        
+        // 获取Cookie
+        $array_json = json_decode(request()->cookie('profile_json'));
+        
+        // 正文
+        $user_id = auth()->user()->id;
+        $user_guid = $array_json->innovate_uuid;
+        $data = Samplecube::where('surveyId',$id)->first();
+
+        $url = $data->url;
+        $cpi = $data->cpi;
+        $groupId = $data->groupid;
+        $pid = strtoupper($this->gen_uuid());
+        
+        // 历史记录保存
+        $history = new History();
+        $history->user_id = $user_id;
+        $history->site = "Sample-cube";
+        $history->surveyId = $id;
+        $history->groupId = $groupId;
+        $history->cpi = $cpi;
+        $history->status = "unknown";
+        // 这个地方例外，因为sc不返回surveyid，所以用的是pid，其实都应该用pid
+        $history->uuid = $pid;
+        $history->save();
+
+        // 链接替换
+        $url = str_replace("[#scid#]", $pid, $url);
+        $url = str_replace("[#scid2#]", $user_guid, $url);
+        $url = str_replace("[#scid3#]", $user_guid, $url);
+        return $url;
+        return redirect($url);
+
+    }
+
+    // 产生uuid
+    public function gen_uuid(){
+        return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+            // 32 bits for "time_low"
+            mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+    
+            // 16 bits for "time_mid"
+            mt_rand( 0, 0xffff ),
+    
+            // 16 bits for "time_hi_and_version",
+            // four most significant bits holds version number 4
+            mt_rand( 0, 0x0fff ) | 0x4000,
+    
+            // 16 bits, 8 bits for "clk_seq_hi_res",
+            // 8 bits for "clk_seq_low",
+            // two most significant bits holds zero and one for variant DCE1.1
+            mt_rand( 0, 0x3fff ) | 0x8000,
+    
+            // 48 bits for "node"
+            mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+        );
     }
 }
