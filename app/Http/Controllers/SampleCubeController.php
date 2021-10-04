@@ -72,7 +72,7 @@ class SampleCubeController extends Controller
             return '<h1 style="color:red">No Cookie!</h1>';
         }
 
-        $list = Sample_cube::all();
+        $list = Samplecube::all();
 
         $group_all = Scgroup::all();
 
@@ -161,6 +161,8 @@ class SampleCubeController extends Controller
         }
         
         $list = $new_list;
+
+        return $list;
 
         $count = count($list);
 
