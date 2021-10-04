@@ -74,6 +74,8 @@ class ScGroupUpdate extends Command
                 }
                 if ($value['IsSurveyGroupExist'] == true) {
                     $task->groupid = 12345;
+                }else{
+                    $task->groupid = $value['SurveyId'];
                 }
                 $task->country = $country_code;
                 $task->cpi = $value['CPI'];

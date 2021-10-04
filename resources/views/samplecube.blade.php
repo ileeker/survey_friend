@@ -43,8 +43,8 @@
                     @endforeach        
                 </small>
                 </td>
-                <td><small>123<a target="_blank" href="{{route('samplecube')}}/{{$item[0]['surveyid ']}}" >{{$item[0]['surveyid ']}}</a></small></td>
-                <td><small>({{count($item['info'])}})<a href="#" onclick="openDialog('{{$item[0]['group_id']}}')">{{$item[0]['group_id']}}</a></small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/{{$item[0]['surveyid']}}" >{{$item[0]['surveyid']}}</a></small></td>
+                <td><small>({{count($item['info'])}})<a href="#" onclick="openDialog('{{$item[0]['groupid']}}')">{{$item[0]['groupid']}}</a></small></td>
                 <td><small>${{$item[0]['cpi']}}</small></td>
                 <td><small>{{$item[0]['totalquota']}}</small></td>
                 <td><small>{{$item[0]['remainquota']}}</small></td>
@@ -52,7 +52,7 @@
                 <td><small>{{$item[0]['ir']}}%</small></td>
                 <td><small>{{$item[0]['country']}}</small></td>
                 <td><small><small>{{$item[0]['UpdateTimeStamp']}}</small></small></td>
-                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$item[0]['prj_id']}}" >quota</a></small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$item[0]['surveyid']}}" >quota</a></small></td>
             </tr>
             @endforeach
             
@@ -68,6 +68,7 @@
     <table id="tableSort" class="myTable">
         <thead>
             <tr>
+                <th type="number"><small>M</small></th>
                 <th type="number"><small>ID</small></th>
                 <th type="number"><small>Group</small></th>
                 <th type="number"><small>CPI</small></th>
@@ -75,28 +76,23 @@
                 <th type="number"><small>Rem</small></th>
                 <th type="number"><small>Min</small></th>
                 <th type="number"><small>IR</small></th>
-                {{-- <th type="number"><small>Country</small></th> --}}
-                <th type="number"><small>Name</small></th>
-                <th type="number"><small>Ctime</small></th>
-                <th type="number"><small>Etime</small></th>
+                <th type="number"><small>Country</small></th>
+                <th type="number"><small>Utime</small></th>
                 <th ><small>Q</small></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($item['info'] as $sig)
             <tr>
-                <td><small><a target="_blank" href="{{route('samplecube')}}/{{$sig['prj_id']}}" >{{$sig['prj_id']}}</a></small></td>
-                <td><small><a href="#" onclick="openDialog('{{$sig['group_id']}}')">{{$sig['group_id']}}</a></small></td>
-                <td><small>${{$sig['P_payout']}}</small></td>
-                <td><small>{{$sig['total_completes']}}</small></td>
-                <td><small>{{$sig['remain']}}</small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/{{$sig['surveyid']}}" >{{$sig['surveyid']}}</a></small></td>
+                <td><small><a href="#" onclick="openDialog('{{$sig['groupid']}}')">{{$sig['groupid']}}</a></small></td>
+                <td><small>${{$sig['cpi']}}</small></td>
+                <td><small>{{$sig['totalquota']}}</small></td>
+                <td><small>{{$sig['remainquota']}}</small></td>
                 <td><small>{{$sig['loi']}}Min</small></td>
                 <td><small>{{$sig['ir']}}%</small></td>
-                {{-- <td><small>{{$sig['country']}}</small></td> --}}
-                <td><small><small>{{$sig['prj_name']}}</small></small></td>
-                <td><small><small>{{$sig['ctime']}}</small></small></td>
-                <td><small><small>{{$sig['updated_at']}}</small></small></td>
-                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$sig['prj_id']}}" >quota</a></small></td>
+                <td><small><small>{{$sig['UpdateTimeStamp']}}</small></small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$sig['surveyid']}}" >quota</a></small></td>
             </tr>
             @endforeach
         </tbody>
