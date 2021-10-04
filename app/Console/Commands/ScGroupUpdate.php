@@ -99,13 +99,6 @@ class ScGroupUpdate extends Command
             $response = file_get_contents($URL, false, $context);
             $array = json_decode($response, true);
             Samplecube::where('surveyid', $value['surveyid'])->update(array('groupid' => $array['SurveyGroups'][0]['SurveyGroupId']));
-
-            // 存取内容
-            // $task = new Scgroup();
-            // $task->SurveyId = $array['SurveyId'];
-            // $task->SurveyGroupId = $array['SurveyGroups'][0]['SurveyGroupId'];
-            // $task->SurveyGroupSurveys = implode(',',$array['SurveyGroups'][0]['SurveyGroupSurveys']);
-            // $task->save();
         }
     }
 }

@@ -65,7 +65,7 @@ Route::middleware('auth')->group(function () {
     // Sample-Cube开始
     // Route::get('/sample-cube', function(){return '<h1>Not suitable for making money.</h1>';})->name('samplecube');
     Route::get('/sample-cube/store', 'SampleCubeController@sample_cube_store')->name('samplecube_store');
-    Route::get('/sample-cube','SampleCubeController@samplecube')->name('samplecube');
+    Route::get('/sample-cube','SampleCubeController@index')->name('samplecube');
     Route::get('/sample-cube/{id}','SampleCubeController@sample_cube_id')->where('id', '[0-9]+');
     Route::get('/sample-cube/quota/{id}/{country}','SampleCubeController@sample_cube_quota')->where('id', '[0-9]+')->name('samplecube_quota');
     Route::get('/sample-cube/{country}','SampleCubeController@sample_cube_country')->where('country', '[[a-zA-Z]+');

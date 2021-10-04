@@ -65,107 +65,102 @@ class SampleCubeController extends Controller
     }
 
     // Sample-Cube读取
-    public function samplecube(){
-
-        // 判断Cookie是否存在
-        if (request()->cookie('profile_json') == NULL) {
-            return '<h1 style="color:red">No Cookie!</h1>';
-        }
-
-        $list = Samplecube::all();
-
-        $group_all = Scgroup::all();
-
-        $group_id_array = array();
-        $group_id_only = array();
-
-        // GroupID集合
-        $group_id = array();
-
-        foreach ($group_all as $value) {
-            $group_id_array[$value['SurveyId']] = $value['SurveyGroupId'];
-            $group_id_only[] = $value['SurveyGroupId'];
-        }
-
-        // 过滤group_id_only
-        $group_id_only = array_values(array_unique($group_id_only));
-
+    public function index(){
+        // 获得用户的信息
         $user = auth()->user();
 
-        $whitelist = $user->whitelists->where('status','whitelist')->all();
-        $blacklist = $user->whitelists->where('status','blacklist')->all();
+        $all = Samplecube::orderBy('UpdateTimeStamp', 'DESC')->get();
 
-        foreach ($list as $key => $value1) {
+        $new_all = array();
+        $groupId = array();
+        $allGroupId = array();
 
-            if (array_key_exists($value1['surveyid'],$group_id_array)) {
-                $value1['groupID'] = $group_id_array[$value1['surveyid']];
+        $last_time = $all[0]['created_at']->format('Y-m-d H:i:s');
 
-                if ($value1['groupID'] != '') {
-                    $group_id[] = $value1['groupID'];
+        foreach ($all as $value) {
+            if (isset($new_all[$value['groupid']])) {
+                if ($value['cpi'] > $new_all[$value['groupid']][0]['cpi']) {
+                    $new_all[$value['groupid']][0] = "";
+                    $new_all[$value['groupid']][0] = $value;
+                    $new_all[$value['groupid']]['info'][] = $value;
+                }else {
+                    $new_all[$value['groupid']]['info'][] = $value;
                 }
-
             }else {
-                $value1['groupID'] = '';
-            }
-
-            foreach ($whitelist as $value2) {
-                if ($value1['surveyid'] == $value2['surveyid']) {
-                    $value1['whitelist'] = "w";
-                }
+                $new_all[$value['groupid']][] = $value;
+                $new_all[$value['groupid']]['info'][] = $value;
             }
         }
 
-        // 转换Group的数组
-        $counts = array_count_values($group_id);
+        // 获取user的best
+        $remark = auth()->user()->remarks->all();
+        // $black = auth()->user()->blacks->pluck('surveyId')->toArray();
 
-        foreach ($list as $key => $value1) {
+        // 重新赋值
 
-            if ($value1['groupID'] != '') {
-                $value1['count'] = ''.$counts[$value1['groupID']];
+        // 按照国家分组
+        $us = array();
+        $uk = array();
+        $au = array();
+        $ca = array();
+        $cn = array();
+        $fr = array();
+        $de = array();
+        $jp = array();
+        $best = array();
+
+        foreach ($new_all as $value) {
+
+            if (strpos($value[0]['country'], 'US') !== false) {
+                $us[] = $value;
+            }
+            
+            if (strpos($value[0]['country'], 'UK') !== false) {
+                $uk[] = $value;
+            }
+            
+            if (strpos($value[0]['country'], 'CA') !== false) {
+                $ca[] = $value;
+            }
+            
+            if (strpos($value[0]['country'], 'AU') !== false) {
+                $au[] = $value;
+            }
+            
+            if (strpos($value[0]['country'], 'CN') !== false) {
+                $cn[] = $value;
+            }
+            
+            if (strpos($value[0]['country'], 'FR') !== false) {
+                $fr[] = $value;
             }
 
-            foreach ($blacklist as $value2) {
-                if ($value1['surveyid'] == $value2['surveyid']) {
-                    $value1['blacklist'] = "b";
-                }
+            if (strpos($value[0]['country'], 'DE') !== false) {
+                $de[] = $value;
+            }
+
+            if (strpos($value[0]['country'], 'JP') !== false) {
+                $jp[] = $value;
+            }
+
+            if (strpos($value[0]['country'], 'Best') !== false) {
+                $best[] = $value;
             }
         }
 
-        // 被选中的survey id
-        $select_array = array();
+        $total['us'] = $us;
+        $total['uk'] = $uk;
+        $total['ca'] = $ca;
+        $total['au'] = $au;
+        $total['cn'] = $cn;
+        $total['fr'] = $fr;
+        $total['de'] = $de;
+        $total['jp'] = $jp;
+        $total['best'] = $best;
 
-        foreach ($group_id_only as $id) {
-            $cpi = 0;
-            $select_id = '';
-            foreach ($list as $value) {
-                if ($value['groupID'] == $id) {
-                    if ($value['cpi'] > $cpi) {
-                        $cpi = $value['cpi'];
-                        $select_id = $value['surveyid'];
-                    }
-                }
-            }
-            $select_array[] = $select_id;
-        }
+        return $total;
 
-        $new_list = array();
-        
-        foreach ($list as $key => $value) {
-            if ($value['groupID'] == '') {
-                $new_list[] = $value;
-            }else {
-                if (in_array($value['surveyid'],$select_array)) {
-                    $new_list[] = $value;
-                }
-            }
-        }
-        
-        $list = $new_list;
-
-        return $list;
-
-        $count = count($list);
-
-        return view('survey.samplecube',compact('list','count'));
+        // return $remark;
+        return view('opinionetwork',compact('total','remark','new_all', 'last_time'));
     }
 }
