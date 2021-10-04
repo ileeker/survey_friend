@@ -43,7 +43,7 @@
                     @endforeach        
                 </small>
                 </td>
-                <td><small><a target="_blank" href="{{route('samplecube')}}/{{$item[0]['surveyid ']}}" >{{$item[0]['surveyid ']}}</a></small></td>
+                <td><small>123<a target="_blank" href="{{route('samplecube')}}/{{$item[0]['surveyid ']}}" >{{$item[0]['surveyid ']}}</a></small></td>
                 <td><small>({{count($item['info'])}})<a href="#" onclick="openDialog('{{$item[0]['group_id']}}')">{{$item[0]['group_id']}}</a></small></td>
                 <td><small>${{$item[0]['cpi']}}</small></td>
                 <td><small>{{$item[0]['totalquota']}}</small></td>
