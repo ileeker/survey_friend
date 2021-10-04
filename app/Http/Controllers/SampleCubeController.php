@@ -139,7 +139,7 @@ class SampleCubeController extends Controller
         $total['au'] = $au;
         $total['hk'] = $hk;
 
-        // return $total;
+        return $total;
 
         // return $remark;
         return view('samplecube',compact('total','remark','new_all', 'last_time'));
