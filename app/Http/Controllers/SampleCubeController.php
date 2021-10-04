@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Samplecube;
+use App\Scgroup;
 
 
 class SampleCubeController extends Controller
