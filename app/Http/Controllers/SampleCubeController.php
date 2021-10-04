@@ -142,6 +142,6 @@ class SampleCubeController extends Controller
         // return $total;
 
         // return $remark;
-        return view('opinionetwork',compact('total','remark','new_all', 'last_time'));
+        return view('samplecube',compact('total','remark','new_all', 'last_time'));
     }
 }
