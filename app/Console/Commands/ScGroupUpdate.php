@@ -73,7 +73,7 @@ class ScGroupUpdate extends Command
                     $country_code = 'OTHERS';
                 }
                 if ($value['IsSurveyGroupExist'] == true) {
-                    $task->groupid = 'yes';
+                    $task->groupid = 12345;
                 }
                 $task->country = $country_code;
                 $task->cpi = $value['CPI'];
@@ -89,7 +89,7 @@ class ScGroupUpdate extends Command
         // 清空Scgroup的数据库
         Scgroup::truncate();
         // 获取所有有Group的数据
-        $group = Samplecube::where('groupid','yes')->get();
+        $group = Samplecube::where('groupid', 12345)->get();
         // 存储Group的数据
         foreach ($group as $value) {
             // 读取网页内容
