@@ -7,14 +7,13 @@
     <li><a href="#news" onclick="openCity('uk')" id="uk1" class="country">UK</a></li>
     <li><a href="#news" onclick="openCity('au')" id="au1" class="country">AU</a></li>
     <li><a href="#news" onclick="openCity('hk')" id="hk1" class="country">HK</a></li>
-    <li><a href="#news" onclick="openCity('best')" id="best1" class="country">Best</a></li>
     <li><a href="#" class="country">{{$last_time}}</a></li>
 </ul>
 <hr>
 @endsection
 @section('table')
 @foreach ($total as $keyName => $value)
-{{-- 多国开始 --}}
+<!-- 美国开始 -->
 <div id="{{$keyName}}" class="w3-container city" @if ($keyName != 'us') style="display: none" @endif>
     <h2>{{$keyName}}({{count($value)}})</h2>
     <table id="table_id_example" class="myTable">
@@ -22,18 +21,14 @@
             <tr>
                 <th type="number"><small>M</small></th>
                 <th type="number"><small>ID</small></th>
-                <th type="string"><small>JobId</small></th>
+                <th type="number"><small>Group</small></th>
                 <th type="number"><small>CPI</small></th>
                 <th type="number"><small>Tot</small></th>
                 <th type="number"><small>Rem</small></th>
                 <th type="number"><small>Min</small></th>
                 <th type="number"><small>IR</small></th>
-                <th ><small>T</small></th>
                 <th type="number"><small>Country</small></th>
-                <th type="number"><small>Name</small></th>
-                <th type="number"><small>Type</small></th>
-                <th type="number"><small>Ctime</small></th>
-                <th type="number"><small>Mtime</small></th>
+                <th type="number"><small>Utime</small></th>
                 <th ><small>Q</small></th>
             </tr>
         </thead>
@@ -42,75 +37,66 @@
             <tr>
                 <td class="sequence"><small>
                     @foreach ($remark as $remark1)
-                        @if ($item['jobId'] == $remark1->surveyId)
+                        @if ($item[0]['groupid'] == $remark1->surveyId)
                             <a href=# title="{{$remark1->remark}}">{{$remark1->sign}}</a>
                         @endif
-                    @endforeach
-                </small></td>
-                @if ($keyName == 'best')
-                    <td><small><a target="_blank" href="{{route('innovate')}}/sub/{{$item['surveyId']}}" >{{$item['surveyId']}}</a></small></td>
-                @else
-                    <td><small><a target="_blank" href="{{route('innovate')}}/{{$item['surveyId']}}" >{{$item['surveyId']}}</a></small></td>
-                @endif
-                <td><small><a href="#" onclick="openDialog('{{$item['jobId']}}')">({{count($item['info'])}}){{$item['jobId']}}</a></small></td>
-                <td><small>${{$item['CPI']}}</small></td>
-                <td><small>{{$item['N']}}</small></td>
-                <td><small>{{$item['remainingN']}}</small></td>
-                <td><small>{{$item['LOI']}}.0</small></td>
-                <td><small>{{$item['IR']}}%</small></td>
-                <td><small><a target="_blank" href="{{route('innovate')}}/target/{{$item['surveyId']}}" >target</a></small></td>
-                <td><small>{{$item['Country']}}</small></td>
-                <td><small><small>{{$item['surveyName']}}</small></small></td>
-                <td><small><small>{{$item['groupType']}}-{{$item['jobCategory']}}</small></small></td>
-                <td><small><small>{{$item['ctime']}}</small></small></td>
-                <td><small><small>{{$item['mtime']}}</small></small></td>
-                <td><small><a target="_blank" href="{{route('innovate')}}/quota/{{$item['surveyId']}}" >quota</a></small></td>
+                    @endforeach        
+                </small>
+                </td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/{{$item[0]['surveyid ']}}" >{{$item[0]['surveyid ']}}</a></small></td>
+                <td><small>({{count($item['info'])}})<a href="#" onclick="openDialog('{{$item[0]['group_id']}}')">{{$item[0]['group_id']}}</a></small></td>
+                <td><small>${{$item[0]['cpi']}}</small></td>
+                <td><small>{{$item[0]['totalquota']}}</small></td>
+                <td><small>{{$item[0]['remainquota']}}</small></td>
+                <td><small>{{$item[0]['loi']}}.0</small></td>
+                <td><small>{{$item[0]['ir']}}%</small></td>
+                <td><small>{{$item[0]['country']}}</small></td>
+                <td><small><small>{{$item[0]['UpdateTimeStamp']}}</small></small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$item[0]['prj_id']}}" >quota</a></small></td>
             </tr>
             @endforeach
             
         </tbody>
     </table>
 </div>
-{{-- 多国结束 --}}
+{{-- 美国结束 --}}
 @endforeach
 @endsection
 @section('hideContent')
-@foreach ($projectNew as $key => $item)
+@foreach ($new_all as $key => $item)
 <div id="{{$key}}" class="white_content">
     <table id="tableSort" class="myTable">
         <thead>
             <tr>
-                <th type="number"><small><small>ID</small></small></th>
-                <th type="number"><small><small>CPI</small></small></th>
-                <th type="number"><small><small>Tot</small></small></th>
-                <th type="number"><small><small>Rem</small></small></th>
-                <th type="number"><small><small>LOI</small></small></th>
-                <th type="number"><small><small>IR</small></small></th>
-                <th type="string"><small><small>Country</small></small></th>
-                <th type="string"><small><small>Name</small></small></th>
-                <th type="string"><small><small>Type</small></small></th>
-                <th type="string"><small><small>Ctime</small></small></th>
-                <th type="string"><small><small>Mtime</small></small></th>
-                <th><small><small>Target</small></small></th>
-                <th><small><small>Quota</small></small></th>
+                <th type="number"><small>ID</small></th>
+                <th type="number"><small>Group</small></th>
+                <th type="number"><small>CPI</small></th>
+                <th type="number"><small>Tot</small></th>
+                <th type="number"><small>Rem</small></th>
+                <th type="number"><small>Min</small></th>
+                <th type="number"><small>IR</small></th>
+                {{-- <th type="number"><small>Country</small></th> --}}
+                <th type="number"><small>Name</small></th>
+                <th type="number"><small>Ctime</small></th>
+                <th type="number"><small>Etime</small></th>
+                <th ><small>Q</small></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($item['info'] as $sig)
             <tr>
-                <td><small><a target="_blank" href="{{route('innovate')}}/{{$sig['surveyId']}}">{{$sig['surveyId']}}</small></a></td>
-                <td><small>${{$sig['CPI']}}</small></td>
-                <td><small>{{$sig['N']}}</small></td>
-                <td><small>{{$sig['remainingN']}}</small></td>
-                <td><small>{{$sig['LOI']}}Min</small></td>
-                <td><small>{{$sig['IR']}}%</small></td>
-                <td><small>{{$sig['Country']}}</small></td>
-                <td><small>{{$sig['surveyName']}}</small></td>
-                <td><small>{{$sig['groupType']}}-{{$sig['jobCategory']}}</small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/{{$sig['prj_id']}}" >{{$sig['prj_id']}}</a></small></td>
+                <td><small><a href="#" onclick="openDialog('{{$sig['group_id']}}')">{{$sig['group_id']}}</a></small></td>
+                <td><small>${{$sig['P_payout']}}</small></td>
+                <td><small>{{$sig['total_completes']}}</small></td>
+                <td><small>{{$sig['remain']}}</small></td>
+                <td><small>{{$sig['loi']}}Min</small></td>
+                <td><small>{{$sig['ir']}}%</small></td>
+                {{-- <td><small>{{$sig['country']}}</small></td> --}}
+                <td><small><small>{{$sig['prj_name']}}</small></small></td>
                 <td><small><small>{{$sig['ctime']}}</small></small></td>
-                <td><small><small>{{$sig['mtime']}}</small></small></td>
-                <td><small><a target="_blank" href="{{route('innovate')}}/target/{{$sig['surveyId']}}">target</a></small></td>
-                <td><small><a target="_blank" href="{{route('innovate')}}/quota/{{$sig['surveyId']}}">quota</a></small></td>
+                <td><small><small>{{$sig['updated_at']}}</small></small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$sig['prj_id']}}" >quota</a></small></td>
             </tr>
             @endforeach
         </tbody>

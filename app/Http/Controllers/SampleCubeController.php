@@ -127,38 +127,19 @@ class SampleCubeController extends Controller
                 $au[] = $value;
             }
             
-            if (strpos($value[0]['country'], 'CN') !== false) {
-                $cn[] = $value;
+            if (strpos($value[0]['country'], 'HK') !== false) {
+                $hk[] = $value;
             }
             
-            if (strpos($value[0]['country'], 'FR') !== false) {
-                $fr[] = $value;
-            }
-
-            if (strpos($value[0]['country'], 'DE') !== false) {
-                $de[] = $value;
-            }
-
-            if (strpos($value[0]['country'], 'JP') !== false) {
-                $jp[] = $value;
-            }
-
-            if (strpos($value[0]['country'], 'Best') !== false) {
-                $best[] = $value;
-            }
         }
 
         $total['us'] = $us;
         $total['uk'] = $uk;
         $total['ca'] = $ca;
         $total['au'] = $au;
-        $total['cn'] = $cn;
-        $total['fr'] = $fr;
-        $total['de'] = $de;
-        $total['jp'] = $jp;
-        $total['best'] = $best;
+        $total['hk'] = $hk;
 
-        return $total;
+        // return $total;
 
         // return $remark;
         return view('opinionetwork',compact('total','remark','new_all', 'last_time'));
