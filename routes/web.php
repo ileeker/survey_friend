@@ -85,6 +85,9 @@ Route::get('/money/{id}/{startDate}/{endDate}', 'SettingController@money')->name
 // Dynata
 Route::get('/callback/dynata','RedirectController@dynata');
 
-// test
-Route::get('/test','HomeController@test');
+// Sample-Cube
+Route::get('/r/success','RedirectController@sc_succsee');
+Route::get('/r/overquota','RedirectController@sc_overquota');
+Route::get('/r/terminate','RedirectController@sc_terminate');
+Route::get('/r/security-terminate','RedirectController@sc_security_terminate');
 // Route::get('/test1','HomeController@test1');

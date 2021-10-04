@@ -115,7 +115,7 @@ class SampleCubeController extends Controller
                 $us[] = $value;
             }
             
-            if (strpos($value[0]['country'], 'UK') !== false) {
+            if (strpos($value[0]['country'], 'GB') !== false) {
                 $uk[] = $value;
             }
             
@@ -180,6 +180,95 @@ class SampleCubeController extends Controller
         return $url;
         return redirect($url);
 
+    }
+
+    // Sample-Cube的quota读取
+    public function sample_cube_quota($id,$country){
+            
+        // 确定读取哪个文件
+        if ($country == 'us') {
+            $fileName = 'sc-us.txt';
+        }
+        if ($country == 'uk') {
+            $fileName = 'sc-gb.txt';
+        }
+        if ($country == 'ca') {
+            $fileName = 'sc-ca.txt';
+        }
+        if ($country == 'au') {
+            $fileName = 'sc-au.txt';
+        }
+        if ($country == 'hk') {
+            $fileName = 'sc-hk.txt';
+        }
+        if ($country == 'tw') {
+            $fileName = 'sc-tw.txt';
+        }
+
+        // 读取网页内容
+        $URL = "https://api.sample-cube.com/api/Survey/GetSupplierSurveyQuotas/1505/0d57ee95-70a1-49e6-89ec-8e8a2558a6a1/".$id;
+        $aHTTP['http']['method']  = 'GET';
+        $context = stream_context_create($aHTTP);
+        $response = file_get_contents($URL, false, $context);
+        $array = json_decode($response, true);
+
+        // 读取答案
+        $string = file_get_contents(route('index_home').'/'.$fileName);
+        $json_qa = json_decode($string, true);
+
+        // 取出quota
+        $array_quota = $array['SurveyQuotas'];
+
+        if (count($array_quota)>1) {
+            
+            // 删除第一个无用元素
+            array_shift($array_quota);
+
+            // 循环所有的配额
+            for ($i=0; $i < count($array_quota); $i++) { 
+                
+                for ($x=0; $x < count($array_quota[$i]['Conditions']); $x++) { 
+                    unset($array_quota[$i]['Conditions'][$x]['AnswerCodes']);
+                    $question = $array_quota[$i]['Conditions'][$x]['QualificationId'];
+
+                    // 创建答案数组
+                    $answer_a = array();
+
+                    // 循环表格
+                    foreach ($json_qa['Sheet1'] as $key2 => $value2) {
+                        // 对比看看有没有一样的
+                        if ($question == $value2['QualificationId']) {
+                            $array_quota[$i]['Conditions'][$x]['QualificationId'] = $value2['Text'];
+                        }
+
+                        //查看值是否在数组
+                        if (in_array($value2['AnswerId'],$array_quota[$i]['Conditions'][$x]['AnswerIds'])) {
+                            $answer_a[] = $value2['AnswerText'];
+                        }
+
+                        // 年龄特殊判断
+                        if (strpos($array_quota[$i]['Conditions'][$x]['AnswerIds'][0],'-')) {
+                            $answer_a = $array_quota[$i]['Conditions'][$x]['AnswerIds'];
+                        }
+                    }
+
+                    if ($answer_a != NULL) {
+                        $array_quota[$i]['Conditions'][$x]['AnswerIds'] = $answer_a;
+                    }
+
+                
+                }
+
+            }
+
+            // return $array;
+            return $array_quota;
+
+        }else {
+            
+            // return $array;
+            return '<title>None</title>';
+        }
     }
 
     // 产生uuid

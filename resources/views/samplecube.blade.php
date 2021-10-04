@@ -23,7 +23,7 @@
                 <th type="number"><small>ID</small></th>
                 <th type="number"><small>Group</small></th>
                 <th type="number"><small>CPI</small></th>
-                <th type="number"><small>Tot</small></th>
+                {{-- <th type="number"><small>Tot</small></th> --}}
                 <th type="number"><small>Rem</small></th>
                 <th type="number"><small>Min</small></th>
                 <th type="number"><small>IR</small></th>
@@ -46,13 +46,13 @@
                 <td><small><a target="_blank" href="{{route('samplecube')}}/{{$item[0]['surveyid']}}" >{{$item[0]['surveyid']}}</a></small></td>
                 <td><small>({{count($item['info'])}})<a href="#" onclick="openDialog('{{$item[0]['groupid']}}')">{{$item[0]['groupid']}}</a></small></td>
                 <td><small>${{$item[0]['cpi']}}</small></td>
-                <td><small>{{$item[0]['totalquota']}}</small></td>
+                {{-- <td><small>{{$item[0]['totalquota']}}</small></td> --}}
                 <td><small>{{$item[0]['remainquota']}}</small></td>
                 <td><small>{{$item[0]['loi']}}.0</small></td>
                 <td><small>{{$item[0]['ir']}}%</small></td>
                 <td><small>{{$item[0]['country']}}</small></td>
                 <td><small><small>{{$item[0]['UpdateTimeStamp']}}</small></small></td>
-                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$item[0]['surveyid']}}" >quota</a></small></td>
+                <td><small><a target="_blank" href="{{route('samplecube')}}/quota/{{$item[0]['surveyid']}}/{{$keyName}}" >quota</a></small></td>
             </tr>
             @endforeach
             
@@ -72,7 +72,7 @@
                 <th type="number"><small>ID</small></th>
                 <th type="number"><small>Group</small></th>
                 <th type="number"><small>CPI</small></th>
-                <th type="number"><small>Tot</small></th>
+                {{-- <th type="number"><small>Tot</small></th> --}}
                 <th type="number"><small>Rem</small></th>
                 <th type="number"><small>Min</small></th>
                 <th type="number"><small>IR</small></th>
@@ -87,7 +87,7 @@
                 <td><small><a target="_blank" href="{{route('samplecube')}}/{{$sig['surveyid']}}" >{{$sig['surveyid']}}</a></small></td>
                 <td><small><a href="#" onclick="openDialog('{{$sig['groupid']}}')">{{$sig['groupid']}}</a></small></td>
                 <td><small>${{$sig['cpi']}}</small></td>
-                <td><small>{{$sig['totalquota']}}</small></td>
+                {{-- <td><small>{{$sig['totalquota']}}</small></td> --}}
                 <td><small>{{$sig['remainquota']}}</small></td>
                 <td><small>{{$sig['loi']}}Min</small></td>
                 <td><small>{{$sig['ir']}}%</small></td>
