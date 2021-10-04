@@ -27,7 +27,7 @@ class RedirectController extends Controller
             $history_data->save();
             return '<h1 style="color:red">Success</h1>';
         }else{
-            return '<h1>No this survey!</h1>';
+            return '<h1>Success? No this survey?</h1>';
         }
     }
 
