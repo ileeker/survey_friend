@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Survey\Scgroup;
-use App\Survey\Samplecube;
+use App\Scgroup;
+use App\Samplecube;
 
 class ScGroupUpdate extends Command
 {
