@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
         // $schedule->call('App\Http\Controllers\DynataController@remain_store')->hourly();
         $schedule->command('update:dynata')->hourly();
         $schedule->command('update:dynataRemain')->hourly();
-        $schedule->command('ScGroupUpdate')->hourly();
+        // $schedule->command('ScGroupUpdate')->hourly();
     }
 
     /**
